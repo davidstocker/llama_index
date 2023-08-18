@@ -129,7 +129,7 @@ def download_loader(
 
     # Fetch up-to-date library from remote repo if loader_id not found
     if loader_id is None:
-        library_raw_content, _ = _get_file_content("https://raw.githubusercontent.com/emptycrown/llama-hub/main/llama_hub/library.json")
+        library_raw_content, _ = _get_file_content("https://raw.githubusercontent.com/emptycrown/llama-hub/main/llama_hub", "/library.json")
         library = json.loads(library_raw_content)
         if loader_class not in library:
             raise ValueError("Loader class name not found in library")
